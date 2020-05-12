@@ -1,7 +1,25 @@
-<div class="container">
-  <h1 class="title">
-    {{ 'PAGES.HOME.TITLE' | translate }}
-  </h1>
+<div id="app" *ngIf="date">
+  <div class="App">
+    <div class="Column Column--hours">
+      <div class="Marker Marker--hours" [ngStyle]="{height: date?.hourOffset, opacity: date?.houropacity}">
+      </div>
+    </div>
+    <div class="Column Column--minutes">
+      <div class="Marker Marker--minutes" [ngStyle]="{height: date?.minuteOffset, opacity: date?.minuteopacity}">
 
-  <a routerLink="/detail">{{ 'PAGES.HOME.GO_TO_DETAIL' | translate }}</a>
+      </div>
+    </div>
+    <div class="Column Column--seconds">
+      <div class="Marker Marker--seconds" [ngStyle]="{height: date?.secondOffset, opacity: date?.secondopacity}">
+
+      </div>
+    </div>
+    <div class="text-overlay" >
+
+        <div class="hours" >{{date?.hours}}</div>
+        <div class="minutes" >{{date?.minutes}}</div>
+        <div class="seconds" >{{date?.seconds}}</div>
+
+    </div>
+  </div>
 </div>
